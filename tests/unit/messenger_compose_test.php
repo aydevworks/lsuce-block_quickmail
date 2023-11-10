@@ -56,6 +56,9 @@ class block_quickmail_messenger_compose_testcase extends advanced_testcase {
             'body' => 'This is one fine body.',
         ]);
 
+        // Set global user.
+        $this->setUser($userteacher);
+
         // Send an email from the teacher to the students now (not as queued adhoc tasks).
         messenger::compose($userteacher, $course, $composeformdata, null, false);
 
